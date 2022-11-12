@@ -11,7 +11,10 @@ public class DiscountDto {
 
     public String offerDescription;
 
-    public List<DiscountCodeDto> validPromoCodeList;
+    public List<String> validPromoCodeList;
+
+    public DiscountDto() {
+    }
 
     public DiscountDto(String offerType, String offerName, String offerDescription) {
         this.offerType = offerType;
@@ -43,11 +46,11 @@ public class DiscountDto {
         this.offerDescription = offerDescription;
     }
 
-    public List<DiscountCodeDto> getValidPromoCodeList() {
+    public List<String> getValidPromoCodeList() {
         return validPromoCodeList;
     }
 
-    public void setValidPromoCodeList(List<DiscountCodeDto> validPromoCodeList) {
+    public void setValidPromoCodeList(List<String> validPromoCodeList) {
         this.validPromoCodeList = validPromoCodeList;
     }
 
