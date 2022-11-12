@@ -11,6 +11,9 @@ public class DiscountCodeDto {
 
     public LocalDate endDate;
 
+    public DiscountCodeDto() {
+    }
+
     public DiscountCodeDto(String code, Integer discountValue, LocalDate endDate) {
         this.code = code;
         this.discountValue = discountValue;

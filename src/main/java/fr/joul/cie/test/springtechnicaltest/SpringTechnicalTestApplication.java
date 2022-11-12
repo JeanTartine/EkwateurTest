@@ -7,15 +7,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.slf4j.*;
 
-import java.io.Console;
-
 @SpringBootApplication
 public class SpringTechnicalTestApplication implements CommandLineRunner {
 
 	public static final Logger LOG = LoggerFactory.getLogger(SpringTechnicalTestApplication.class);
 
 	@Autowired
-	private DiscountController discountController = new DiscountController();
+	private DiscountController discountController;
 
 	public static void main(String[] args) {
 		LOG.info("Starting application");
