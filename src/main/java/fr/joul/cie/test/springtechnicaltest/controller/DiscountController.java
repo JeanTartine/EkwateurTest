@@ -44,8 +44,12 @@ public class DiscountController {
             LOG.info("Code Found");
             List<DiscountDto> discountDtoList = discountService.findAllDiscountByDiscountCode(codePromo);
 
-            LOG.info("Discounts concerned by code list {}", discountDtoList);
-            discountConverter.convertDiscountObjectToJson(discountDtoList);
+            if (discountDtoList != null) {
+                LOG.info("Discounts Found");
+                discountConverter.convertDiscountObjectToJson(discountDtoList);
+            } else {
+                LOG.error("Sorry, no discounts are available for your code...");
+            }
         }
     }
 }
