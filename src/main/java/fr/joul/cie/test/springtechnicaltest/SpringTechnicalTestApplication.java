@@ -24,6 +24,7 @@ public class SpringTechnicalTestApplication implements CommandLineRunner {
 	@Override
 	public void run(final String... args) throws Exception {
 
+		//Verifying that the discount code is given has an argument at application start
 		LOG.info("EXECUTING : command line runner");
 		if (args.length > 0) {
 			LOG.info("PROMOTION CODE FOUND");

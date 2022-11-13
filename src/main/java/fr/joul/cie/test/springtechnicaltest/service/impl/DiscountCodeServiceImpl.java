@@ -16,7 +16,7 @@ import java.util.List;
 public class DiscountCodeServiceImpl implements DiscountCodeService {
 
     public static final Logger LOG = LoggerFactory.getLogger(DiscountCodeServiceImpl.class);
-
+    public static final String jsonFileName = "promoCodelist.json";
     @Autowired
     private DiscountCodeConverter discountCodeConverter;
 
@@ -24,7 +24,7 @@ public class DiscountCodeServiceImpl implements DiscountCodeService {
     public boolean discountCodeExists(String discountCode) throws IOException {
 
         //Retrieve all the discount codes from json file
-        List<DiscountCodeDto> discountCodeDtoList = discountCodeConverter.convertJsonToDiscountCode("promoCodelist.json");
+        List<DiscountCodeDto> discountCodeDtoList = discountCodeConverter.convertJsonToDiscountCode(jsonFileName);
 
         // Check if the code is in the list
          return discountCodeDtoList.stream()
@@ -34,7 +34,7 @@ public class DiscountCodeServiceImpl implements DiscountCodeService {
     @Override
     public boolean discountCodeValid(String discountCode) throws IOException {
         //Retrieve all the discount codes from ou json file
-        List<DiscountCodeDto> discountCodeDtoList = discountCodeConverter.convertJsonToDiscountCode("promoCodelist.json");
+        List<DiscountCodeDto> discountCodeDtoList = discountCodeConverter.convertJsonToDiscountCode(jsonFileName);
 
         //Retrieve the discount code from the list
         DiscountCodeDto discountCodeDto = discountCodeDtoList.stream()
@@ -53,7 +53,7 @@ public class DiscountCodeServiceImpl implements DiscountCodeService {
     @Override
     public DiscountCodeDto getDiscountCode(String discountCode) throws IOException {
         //First we retrieve all the discount codes from ou json file
-        List<DiscountCodeDto> discountCodeDtoList = discountCodeConverter.convertJsonToDiscountCode("promoCodelist.json");
+        List<DiscountCodeDto> discountCodeDtoList = discountCodeConverter.convertJsonToDiscountCode(jsonFileName);
 
         //Retrieve the discount code from the list
         return discountCodeDtoList.stream()

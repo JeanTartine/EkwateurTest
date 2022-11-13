@@ -30,7 +30,8 @@ public class DiscountController {
     @Autowired
     private DiscountConverter discountConverter;
 
-    //This function return all the available discounts for a promotion code, if the code is valid
+    //This function return all the available discounts for a promotion code, if the code is valid,
+    //Result is put in a json file into src/main/folder
     @GetMapping("/{codePromo}")
     public void getAllDiscountFromCode(@RequestParam String codePromo) throws IOException {
         LOG.info("Discount code used : {}", codePromo);
